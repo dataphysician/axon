@@ -485,6 +485,12 @@ def reset_round_completion_data():
     global _round_completion_tracker
     _round_completion_tracker = []
 
+# Function to clear batch info collection for Marimo UI
+def clear_batch_info_collection():
+    """Clear the batch info collection for Marimo UI."""
+    if hasattr(collect_batch_info, "collected_data"):
+        collect_batch_info.collected_data.clear()
+
 async def run_until_converged(base_state: State) -> State:
     # Ensure once up-front
     state = ensure_end_nodes(base_state)

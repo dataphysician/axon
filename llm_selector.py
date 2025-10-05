@@ -83,7 +83,7 @@ async def llm_agent(
     )
     choices = "\n".join(f"{cid}: {txt.strip().replace('\n', ' ')}" for cid, txt in candidates.items()) 
     base_template = (
-        "Given the provided context, choose only the most appropriate candidates from the list provided." +
+        "Given the provided context, choose only the MOST APPROPRIATE candidates from the list provided." +
         f"Select 0..N candidates from the following choices:\n{choices}\n" + 
         "Return [] if none or when no candidates were appropriate." + 
         "Then supply a brief reason for the primary selection/s.\n" +
